@@ -6,10 +6,10 @@
     <title>Document</title>
     <style>
         body{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
+            font-family: 'Roboto', sans-serif;
+                }
         #footer{
-            border: 2px solid;
+            /* border: 2px solid; */
             display: inline-block;
             width: 100%;
             text-align: center;
@@ -25,9 +25,54 @@
 
         }
         #nav h3{
-            padding-left:15px ;
+            padding-left:35px ;
             font-weight: 400;
         }
+        table {
+         width: 100%;
+        border-collapse: collapse;
+        border: 1px solid rgb(140 140 140);
+     }
+        th,td {
+            padding:8px;
+            font-size:18px;
+            border: 1px solid rgb(160 160 160);
+     }
+     #box1{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        /* border: 2px solid; */
+     }
+     #box2{
+        display: block;
+        width: 80%;
+        margin-left:10%;
+        /* border: 2px solid; */
+     }
+     #tr-top{
+        background-color: rgb(6, 23, 66);
+        color: white;
+     }
+     #box3{
+        width: 80%;
+        /* border: 2px solid; */
+        margin-left: 10%;
+        display: inline-block;
+     }
+     #box3 label,
+     #box3 input,
+     #box3 textarea,
+     #box3 button {
+    display: block;
+    margin-bottom: 10px;
+    font-size:18px;
+  }
+  p{
+    font-weight: 300;
+    font-size:18px;
+  }
+
     </style>
 </head>
 <body>
@@ -40,9 +85,48 @@
             <h3>Contact</h3>
         </div>
     </div>
-    <div>
+    <div id="box1">
         <h2>Welcome to My Portfolio</h2>
-        <p></p>
+        <p>This portfolio showcases my projects and provides information
+           about my background and contact details.
+        </p>
+        <h2>About</h2>
+        <p>Hello! I'm a web developer passionate about building dynamic and responsive websites. I enjoy creating user-friendly interfaces and working on challenging projects.</p>
     </div>
+
+    
+
+    <div id="box2">
+        <h2>Projects</h2>
+        <table>
+            <tr id="tr-top">
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+               <td>Project Alpha</td> 
+               <td>A web-based tool for tracking project progress and managing tasks.</td>
+               <td>2023</td>
+            </tr>
+            <tr>
+                <td>Portfolio Site</td>
+                <td>A personal website showcasing my work and skills as a web developer.</td>
+                <td>2024</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="box3">
+        <h2>Contact</h2>
+        <label>Name</label>
+        <input type="text">
+        <label>Email</label>
+        <input type="text">
+        <label>Message:</label>
+        <textarea></textarea>
+        <button>Submit</button>
+    </div>
+
 </body>
 </html>

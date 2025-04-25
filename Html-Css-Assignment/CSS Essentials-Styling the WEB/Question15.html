@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <style>
+    body{
+      font-family: sans-serif;
+    }
+  #nav{
+    padding-top: 20px;
+    text-align: center;
+    background-color: red;
+    height:20vh;
+  }
+  #nav>h2{
+    color: navy;
+  }
+  #nav>div{
+    display: flex;
+    justify-content: center;
+    /* box-sizing: border-box; */
+  }
+  #nav>div>p{
+    padding-left: 20px;
+    color: white;
+  }
+  #box2>div{
+    border:1px solid gainsboro;
+  }
+  #box3{
+    border:1px solid gainsboro;
+    margin-top: 6px;
+  }
+  #box4{
+        width: 80%;
+        /* border: 2px solid; */
+        display: inline-block;
+     }
+     #box4 label,
+     #box4 input,
+     #box4 textarea,
+     #box4 button {
+    display: block;
+    font-size:18px;
+  }
+  .border{
+    border: 1px solid gainsboro;
+    width: 21%;
+  }
+  .ul{
+    /* border: 2px solid; */
+    margin-left: 25px;
+    margin-top: -20px;
+  }
+  img{
+    width:120px;
+    border: 1px solid gainsboro;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  </style>
+
+</head>
+<body>
+
+  <div id="nav">
+    <h2>Welcome to My Portfolio</h2>
+    <div>
+      <p>About</p>
+      <p>Projects</p>
+      <p>Contact</p>
+    </div>
+  </div>
+
+  <div>
+    <h2>About Me</h2>
+    <p>Hello! I'm a web developer with a passion for creating functional and beautiful web applications.</p>
+    <img src="https://media-hosting.imagekit.io/ac64595f23274fcd/Frame%201.jpg?Expires=1840196862&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1RLOwOWXZkfY-e6PFd8eZFa-5on7tQHWZ5t038IUXvlOZ7aE3Syqx8a9l4atdBEyr29Mj8XcT02dfinTnC5oGLeZ9G9EjjNDvFFNbtKk~0Gvv2zRsDIWFjMVG3XSBJaW6-YkKWJ6q8RjWZQwuaRi1cUiluPrJku-8RMxaoFlwjraY6wUyzKASqZc5j~vN1zHX3WhpQt0XGjBqQy6f4w9bR7ix0uRSKjca5cC1vtzAdz819pUs1PEQQTATDHfR4BBRCvfxuRfE7gsoMFXXPoMvPB1V5Yp3ZaCk2IdebChfv1utIqOJJ9zhPZBe3-3-o9mZ0lCmjkYZbIiLrJAnjjTGQ__" alt="My Profile">
+  </div>
+
+  <div id="box2">
+    <h2>Projects</h2>
+    <div>
+      <h3>Project Ona: Personal Blog</h3>
+      <p class="border">Screenshot of my e-commerce prot</p>
+      <p>commerce website built to simulate a real-world online shopping experience.</p>
+      <a href="">View Project</a>
+      <ul><li>Technologies Used </li></ul>
+
+      <div class="ul">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="box3">
+    <h3>Project Two: E-commerce Site</h3>
+      <p class="border">Screenshot of my personal blog project</p>
+      <p>A personal blog where I write about development, programming, and technology.</p>
+      <a href="">View Project</a>
+      <ul><li>Technologies Used </li></ul>
+
+      <div class="ul">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+  </div>
+
+  <div id="box4">
+    <h2>Contact</h2>
+    <label>Name</label>
+    <input type="text">
+    <label>Email</label>
+    <input type="text">
+    <label>Message:</label>
+    <textarea></textarea>
+    <button>Submit</button>
+</div>
+
+</body>
+</html>

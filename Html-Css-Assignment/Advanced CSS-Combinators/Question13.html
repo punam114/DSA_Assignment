@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Styling with Combinators</title>
+  <style>
+    ol li:first-child {
+      font-weight: bold;
+    }
+
+    ol li:first-child + li {
+      background-color: lightblue;
+    }
+
+    ol li:nth-child(3) ~ li {
+      font-style: italic;
+    }
+
+    ol li:hover {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+<ol>
+  <li>First Item</li>
+  <li>Second Item</li>
+  <li>Third Item</li>
+  <li>Fourth Item</li>
+  <li>Fifth Item</li>
+</ol>
+
+</body>
+</html>

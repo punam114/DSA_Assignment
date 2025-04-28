@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>How the Internet Works?</h1>
+    </header>
+
+    <main>
+        <article>
+        <section>
+            <p>
+                The Internet works by connecting a vast network of computers and devices through a system of routers and switches, allowing them to communicate and share information. Data is transmitted as packets, following established protocols like IP (Internet Protocol) and TCP (Transport Control Protocol), ensuring reliable and consistent delivery.  
+            </p>
+            <div id="box1">
+                <div>
+                   <h2>Client Server Communication in Operating System</h2> 
+               <p>
+                In an Operating System, Client Server Communication refers to the exchange of data and Services among multiple machines or processes. In Client client-server communication System one process or machine acts as a client requesting a service or data, and Another machine or process acts like a server for providing those Services or Data to the client machine. This Communication model is widely used for exchanging data among various computing environments like Distributed Systems, Internet Applications, and Networking Application communication. The communication between Server and Client takes place with different Protocols and mechanisms.
+               </p>
+               <h3>Different Ways of Client-Server Communication</h3>
+                 <p>Client Server Communication we can use different ways.</p>
+                 <ol>
+                    <li>Sockets Mechanism</li>
+                    <li>Remote Procedure Call</li>
+                    <li>Message Passing</li>
+                    <li>Inter-process Communication</li>
+                    <li>Distributed File Systems</li>
+                 </ol>
+                </div>
+                <div>
+                    <img src="https://www.oreilly.com/api/v2/epubs/9781787126992/files/assets/e1e10ad9-0acb-4e2a-b832-0cef4f01a200.png">
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>The <b><i>Journey of a Web Request</i></b> from browser to server.</h3>
+            <p>A web request journey begins when a user enters a URL into a browser, which then initiates an HTTP request to the server hosting the requested resource. This request travels across the internet, potentially involving DNS resolution, TCP/IP connections, and network hops, before reaching the server. The server processes the request, may interact with databases or other systems, and generates an HTTP response which is then sent back to the browser. Finally, the browser receives and renders the response, displaying the webpage to the user. </p>
+            <ul>
+                <li><b>User Input and DNS Resolution:</b>
+                    <ul>
+                        <li>The user enters a URL (e.g., "https://www.example.com") into their browser.</li>
+                        <li>The browser first needs to find the server's IP address. This is done by querying the Domain Name System (DNS). </li>
+                        <li>The DNS server resolves the domain name to the corresponding IP address. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>TCP/IP Connection:</b>
+                    <ul>
+                        <li>The browser establishes a TCP/IP connection with the server's IP address. </li>
+                        <li>This connection ensures reliable data transmission between the browser and the server. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>HTTP Request Transmission:</b>
+                    <ul>
+                        <li>The browser sends an HTTP request to the server, specifying the requested resource (e.g., the HTML page for the URL) and other relevant information. </li>
+                        <li>This request includes the request method (e.g., GET, POST), headers, and potentially query parameters. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Network Transmission and Routing:</b>
+                    <ul>
+                        <li>The HTTP request data is packaged into packets and transmitted across the network. </li>
+                        <li>Routers forward the packets based on the destination IP address, gradually getting closer to the server. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Server Processing:</b>
+                    <ul>
+                        <li>The server receives the HTTP request, processes it, and may interact with databases or other systems to generate the requested resource. </li>
+                        <li>This processing can involve running server-side scripts, accessing databases, or retrieving data from other sources. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>HTTP Response:</b>
+                    <ul>
+                        <li>The server generates an HTTP response, which includes a status code (e.g., 200 OK, 404 Not Found), headers, and the content of the requested resource (e.g., the HTML page, JavaScript, CSS, images, etc.). </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Response Transmission and Rendering:</b>
+                    <ul>
+                        <li>The HTTP response is transmitted back to the browser, following a similar path across the network. </li>
+                        <li>The browser receives the response, parses the data (e.g., HTML, CSS, JavaScript), and renders the webpage for the user to view. </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+
+            <div>
+             <h3>Client vs Server</h3>
+              
+             <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Client</th>
+                    <th>Server</th>
+                </tr>
+
+                <tr>
+                    <td>Initiating Request</td>
+                    <td>Sends requests to the server to access resources or services.</td>
+                    <td>Responds to client requests, providing data or services.</td>
+                </tr>
+
+                <tr>
+                    <td>Processing Data</td>
+                    <td>May perform some initial processing of data on the client's device.</td>
+                    <td>Handles most of the complex processing and data management.</td>
+                </tr>
+
+                <tr>
+                    <td>User Interface</td>
+                    <td>Displays the user interface and allows user interaction.</td>
+                    <td>Typically does not have a user interface.</td>
+                </tr>
+
+                <tr>
+                    <td>Resource Storage</td>
+                    <td>Primarily stores data and resources locally, such as cached data.</td>
+                    <td>Stores and manages the main data and application logic.</td>
+                </tr>
+
+                <tr>
+                    <td>Security</td>
+                    <td>May be less secure as it is exposed to the user.</td>
+                    <td>Generally more secure, with data and logic protected on the server.</td>
+                </tr>
+
+                <tr>
+                    <td>Example</td>
+                    <td>A web browser requesting a webpage from a server.</td>
+                    <td>A web server serving a webpage to a browser.</td>
+                </tr>
+
+             </table>
+
+            </div>
+
+            <div>
+            <h3>Static vs Dynamic Websites</h3>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Static</th>
+                    <th>Dynamic</th>
+                </tr>
+
+                <tr>
+                    <td>Interactivity</td>
+                    <td>Limited interactivity</td>
+                    <td>High interactivity, personalized content, and user input</td>
+                </tr>
+
+                <tr>
+                    <td>Server-Side Processing</td>
+                    <td>No server-side scripting or database interaction required</td>
+                    <td>Uses server-side scripts (PHP, Python, etc.) and databases</td>
+                </tr>
+
+                <tr>
+                    <td>Development Cost</td>
+                    <td>Lower development and hosting costs</td>
+                    <td>Higher development and hosting costs</td>
+                </tr>
+
+                <tr>
+                    <td>Scalability</td>
+                    <td>Limited scalability, good for simple websites</td>
+                    <td>More scalable, suitable for complex applications</td>
+                </tr>
+
+                <tr>
+                    <td>Examples</td>
+                    <td>Blog, basic portfolio, landing page</td>
+                    <td>Online stores, social networking, online banking</td>
+                </tr>
+
+            </table> 
+            </div>
+
+        </section>
+
+        <section>
+            <div id="box2">
+                <div>
+                    <img id="img2" src="https://i.ytimg.com/vi/L5BlpPU_muY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJOFS9lLS_g83H5vbiCntpMPil4w" alt="">
+                </div>
+                <div>
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/-dSXvLAwXO0?si=J5AKySQLGVEcxiac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <form>
+                <h2>What is a client?</h2>
+                <input type="radio">
+                <label>The main server that stores data.</label>
+                <br>
+                <input type="radio">
+                <label>A computer or program that requests information from a server.</label>
+                <br>
+                <input type="radio">
+                <label>A network protocol used for communication.</label>
+                <br>
+                <input type="radio">
+                <label>A piece of software that runs on the server. </label>
+                <br>
+                <textarea>Your Feedback</textarea>
+                <br>
+                <button>Submit</button>
+            </form>
+        </section>
+  
+        </article>
+        
+    </main>
+
+    <footer>
+        <p>Additional Learning Resources:
+            <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work">MDN Web Docs</a>
+        and 
+            <a href="https://www.hp.com/us-en/shop/tech-takes/how-does-the-internet-work">HP.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>

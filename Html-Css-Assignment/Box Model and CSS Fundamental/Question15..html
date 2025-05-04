@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Responsive Cards</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+
+</style>
+<body>
+  <div class="grid-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image">
+      <h3>Title 1</h3>
+      <p>Description for card 1</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image">
+      <h3>Title 2</h3>
+      <p>Description for card 2</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image">
+      <h3>Title 3</h3>
+      <p>Description for card 3</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image">
+      <h3>Title 4</h3>
+      <p>Description for card 4</p>
+    </div>
+  </div>
+</body>
+</html>

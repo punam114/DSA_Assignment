@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: antiquewhite;
+            width: 300px;
+            padding: 20px;
+        }
+       div{
+        margin-bottom: 12px;
+        padding: 12px;
+       }
+        div:nth-child(1){
+            
+            background-color:plum;
+        }
+        div:nth-child(2){
+            display: block;
+            background-color: yellow;
+        }
+        div:nth-child(3){
+            display: inline;
+            background-color: orange;
+            
+        }
+        div:nth-child(4){
+            display: inline-block;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="hidden-element">Hidden</div>
+        <div id="block-element">Block</div>
+        <div id="inline-element">Inline</div>
+        <div id="inline-block-element">Inline-Block</div>
+    </div>
+</body>
+</html>

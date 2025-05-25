@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        /* border: 2px solid; */
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px;
+    }
+    #box>div{
+        border: 2px solid gainsboro;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+</style>
+<body>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="text" id="password" placeholder="Enter Password">
+    <button id="btn">Submit</button>
+    <div id="box"></div>
+    
+</body>
+</html>
+<script>
+
+let url = "https://681d832bf74de1d219b00089.mockapi.io/users";
+
+let btn =document.getElementById("btn");
+btn.addEventListener("click",postData)
+
+let box = document.getElementById("box");
+
+async function displayData(){
+ let res = await fetch(url)
+ let data = await res.json();
+console.log(data)
+
+box.innerHTML = "";
+data.forEach((ele) => {
+
+let card = document.createElement("div");
+
+let nameHeading = document.createElement("h2");
+nameHeading.textContent = "Name : " + ele.name;
+
+let emailHeading = document.createElement("h2");
+emailHeading.textContent = "Email : " + ele.email;
+
+card.appendChild(nameHeading);
+card.appendChild(emailHeading);
+
+box.appendChild(card);
+})
+}
+
+displayData()
+
+async function postData(){
+    let name = document.getElementById("name").value
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value
+   
+    if(!name || !email || !password){
+       alert("Please fill the Form");
+       return;
+    }
+    let res = await fetch(url , {
+        method : "POST",
+        headers : {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify({name,email,password})
+    })
+    if(res){
+        alert("User added Sucessfully");
+    }
+    else{
+        alert("Failed to add user");
+    }
+
+ displayData()
+
+}
+
+</script>

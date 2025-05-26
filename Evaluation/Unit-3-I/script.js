@@ -24,7 +24,15 @@ async function displayData(){
         let section = document.createElement("h2");
         section.innerHTML ="Section :" + ele.section;
 
-        card.append(name,age,grade,score,section);
+        let btn1 = document.createElement("button");
+        btn1.id = "edit";
+        btn1.innerText = "Edit";
+
+        let btn2 = document.createElement("button");
+        btn2.innerText = "Delete";
+        btn2.id = "delete" ;
+
+        card.append(name,age,grade,score,section,btn1,btn2);
         box.append(card);
         
     })

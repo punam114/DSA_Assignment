@@ -11,4 +11,26 @@
     text-align: center;
     /* margin: auto; */
     border-radius: 12px;
+    padding: 12px;
 }
+#edit, #delete{
+   background-color: rgb(55, 164, 241);
+   border: none;
+   padding: 6px 18px;
+   font-size: 18px;
+   border-radius: 4px;
+   color: white;
+   font-weight: bolder;
+}
+#delete{
+    background-color: rgb(255, 55, 0);
+    margin-left: 12px;
+}
+#nav>select{
+   margin-left: 30px;
+   padding:4px;
+}
+#nav>input,button {
+    padding:4px;
+}
+

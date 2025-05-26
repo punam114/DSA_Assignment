@@ -1,0 +1,14 @@
+#box{
+    /* border: 2px solid; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap : 14px;
+}
+#box>div{
+    margin: 12px;
+    border: 2px solid;
+    /* width: 300px; */
+    text-align: center;
+    /* margin: auto; */
+    border-radius: 12px;
+}

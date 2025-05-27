@@ -10,19 +10,19 @@ async function displayData(){
         let card = document.createElement("div");
 
         let name = document.createElement("h2");
-        name.innerHTML ="Name :" + ele.name;
+        name.innerHTML ="Name : " + ele.name;
 
         let age = document.createElement("h2");
-        age.innerHTML ="Age :" + ele.age;
+        age.innerHTML ="Age : " + ele.age;
 
         let grade = document.createElement("h2");
-        grade.innerHTML ="Grade :" + ele.grade;
+        grade.innerHTML ="Grade : " + ele.grade;
 
         let score = document.createElement("h2");
-        score.innerHTML ="Score :" + ele.score;
+        score.innerHTML ="Score : " + ele.score;
 
         let section = document.createElement("h2");
-        section.innerHTML ="Section :" + ele.section;
+        section.innerHTML ="Section : " + ele.section;
 
         let btn1 = document.createElement("button");
         btn1.id = "edit";

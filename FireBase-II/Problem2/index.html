@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .container { max-width: 800px; margin: auto; }
+    .card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Library Management System</h1>
+
+    <h2>Add Book</h2>
+    <input type="text" id="title" placeholder="Title" />
+    <input type="text" id="author" placeholder="Author" />
+    <input type="text" id="genre" placeholder="Genre" />
+    <input type="number" id="year" placeholder="Published Year" />
+    <button onclick="addBook()">Add Book</button>
+
+    <h2>Books</h2>
+    <select id="filterGenre" onchange="applyFilters()"> 
+      <option value="">All Genres</option>
+      <option value="Science Fiction">Science Fiction</option>
+      <option value="Dystopian">Dystopian</option>
+    </select>
+    <select id="sortBy" onchange="applyFilters()">
+      <option value="">No Sorting</option>
+      <option value="title">Title</option>
+      <option value="publishedYear">Year</option>
+    </select>
+    <select id="itemsPerPage" onchange="applyFilters()">
+      <option value="5">5 per page</option>
+      <option value="10">10 per page</option>
+    </select>
+    <div id="booksContainer"></div>
+    <button onclick="prevPage()">Previous</button>
+    <span id="pageIndicator">Page 1</span>
+    <button onclick="nextPage()">Next</button>
+  </div>
+</html>
+<script>
+    const dbUrl = "https://fir-2-db7a0-default-rtdb.firebaseio.com/books.json"; // Replace with your Firebase DB URL
+
+let currentPage = 1;
+let itemsPerPage = 5;
+let allBooks = [];
+
+window.onload = () => {
+  loadState();
+  fetchBooks();
+};
+
+function saveState() {
+  const state = {
+    filter: document.getElementById("filterGenre").value,
+    sortBy: document.getElementById("sortBy").value,
+    itemsPerPage: document.getElementById("itemsPerPage").value,
+    currentPage
+  };
+  localStorage.setItem("libraryState", JSON.stringify(state));
+}
+
+function loadState() {
+  const state = JSON.parse(localStorage.getItem("libraryState"));
+  if (state) {
+    document.getElementById("filterGenre").value = state.filter;
+    document.getElementById("sortBy").value = state.sortBy;
+    document.getElementById("itemsPerPage").value = state.itemsPerPage;
+    currentPage = state.currentPage || 1;
+    itemsPerPage = parseInt(state.itemsPerPage);
+  }
+}
+
+async function fetchBooks() {
+  const res = await fetch(`${dbUrl}/books.json`);
+  const data = await res.json();
+  allBooks = Object.entries(data || {}).map(([key, book]) => ({ ...book, key }));
+  applyFilters();
+}
+
+function applyFilters() {
+  let filtered = [...allBooks];
+  const genre = document.getElementById("filterGenre").value;
+  const sortBy = document.getElementById("sortBy").value;
+  itemsPerPage = parseInt(document.getElementById("itemsPerPage").value);
+
+  if (genre) {
+    filtered = filtered.filter(b => b.genre === genre);
+  }
+
+  if (sortBy) {
+    filtered.sort((a, b) => (a[sortBy] > b[sortBy] ? 1 : -1));
+  }
+
+  saveState();
+  renderBooks(filtered);
+}
+
+function renderBooks(books) {
+  const start = (currentPage - 1) * itemsPerPage;
+  const paginated = books.slice(start, start + itemsPerPage);
+
+  const container = document.getElementById("booksContainer");
+  container.innerHTML = "";
+
+  paginated.forEach(book => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <strong>${book.title}</strong> by ${book.author}<br>
+      Genre: ${book.genre}, Year: ${book.publishedYear}<br>
+      <button onclick="deleteBook('${book.key}')">Delete</button>
+    `;
+    container.appendChild(div);
+  });
+
+  document.getElementById("pageIndicator").innerText = `Page ${currentPage}`;
+}
+
+function nextPage() {
+  currentPage++;
+  applyFilters();
+}
+
+function prevPage() {
+  if (currentPage > 1) currentPage--;
+  applyFilters();
+}
+
+async function addBook() {
+  const book = {
+    id: Date.now(),
+    title: document.getElementById("title").value,
+    author: document.getElementById("author").value,
+    genre: document.getElementById("genre").value,
+    publishedYear: parseInt(document.getElementById("year").value),
+    available: true
+  };
+
+  await fetch(`${dbUrl}/books.json`, {
+    method: "POST",
+    body: JSON.stringify(book)
+  });
+
+  fetchBooks();
+}
+
+async function deleteBook(key) {
+  await fetch(`${dbUrl}/books/${key}.json`, {
+    method: "DELETE"
+  });
+  fetchBooks();
+}
+
+</script>

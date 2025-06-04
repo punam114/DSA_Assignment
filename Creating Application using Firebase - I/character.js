@@ -26,15 +26,5 @@ async function fetchCharacterDetails() {
   }
 }
 
-function updateClock() {
-  const clock = document.getElementById('clock');
-  const now = new Date();
-  clock.textContent = now.toLocaleTimeString() + ' ' + now.toLocaleDateString(undefined, {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-}
 
 fetchCharacterDetails();

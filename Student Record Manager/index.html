@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Form</title>
+  <style>
+    form {
+      margin: auto;
+      border: 1px solid gainsboro;
+      width: 190px;
+      padding: 40px;
+    }
+    input {
+      margin-top: 6px;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      margin-left: 30%;
+      padding: 10px;
+      background-color: blue;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      color: white;
+    }
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Form -->
+  <form id="form">
+    <label>Name:</label><br />
+    <input id="name" type="text" placeholder="Enter Name" /><br />
+    <label>Batch:</label><br />
+    <input id="batch" type="text" placeholder="Enter Batch" /><br />
+    <label>Age:</label><br />
+    <input id="age" type="number" placeholder="Enter Age" /><br />
+    <label>Score:</label><br />
+    <input id="score" type="number" placeholder="Enter Score" /><br />
+    <button type="submit" id="SubmitBtn">Submit</button>
+  </form>
+
+  <!-- Table -->
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Batch</th>
+        <th>Age</th>
+        <th>Score</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    let students = [
+  { name: "Aarav Sharma", batch: "Web-19", age: 21, score: 85 },
+  { name: "Nisha Verma", batch: "Web-18", age: 22, score: 92 },
+  { name: "Raj Mehta", batch: "Web-20", age: 20, score: 78 },
+  { name: "Simran Kaur", batch: "Web-19", age: 23, score: 88 },
+  { name: "Rohit Yadav", batch: "Web-17", age: 24, score: 81 },
+  { name: "Ananya Mishra", batch: "Web-20", age: 21, score: 95 },
+  { name: "Kunal Patel", batch: "Web-18", age: 22, score: 76 },
+  { name: "Priya Sen", batch: "Web-19", age: 20, score: 89 },
+  { name: "Amitabh Joshi", batch: "Web-17", age: 25, score: 73 },
+  { name: "Neha Chauhan", batch: "Web-20", age: 22, score: 91 }
+];
+
+   
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let batch = document.getElementById("batch").value;
+      let age = document.getElementById("age").value;
+      let score = document.getElementById("score").value;
+
+      let obj = { name, batch, age, score };
+      students.push(obj);
+      e.target.reset(); //it will clear the form
+      displayData();
+    });
+
+    function displayData() {
+      let tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = ""; 
+
+      students.forEach((ele,i) => {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerText = ele.name;
+
+        let td2 = document.createElement("td");
+        td2.innerText = ele.batch;
+
+        let td3 = document.createElement("td");
+        td3.innerText = ele.age;
+
+        let td4 = document.createElement("td");
+        td4.innerText = ele.score;
+
+        let td5 = document.createElement("td");
+
+
+        let td6 = document.createElement("td");
+
+        let editBtn = document.createElement("button")
+        editBtn.innerText = "Edit"
+        editBtn.addEventListener("click",function(){
+                editData(i)
+        })
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete"
+        deleteBtn.addEventListener("click",function(){
+                    deleteData(i)
+        })
+
+
+        td5.appendChild(editBtn);
+        td6.appendChild(deleteBtn)
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4); 
+        tr.appendChild(td5);
+        tr.appendChild(td6);
+    
+        tableBody.appendChild(tr);
+      });
+    }
+
+    //detete data
+    function deleteData(i){
+        students.splice(i,1);
+        displayData()
+    }
+
+    //edit data
+    let currentEditIndex = null;
+    function editData(i){
+  document.getElementById("name").value = students[i].name;
+  document.getElementById("batch").value = students[i].batch;
+  document.getElementById("age").value = students[i].age;
+  document.getElementById("score").value = students[i].score;
+  
+  currentEditIndex = i;
+
+    }
+
+  function updateStudentData() {
+  let name = document.getElementById("name").value;
+  let batch = document.getElementById("batch").value;
+  let age = document.getElementById("age").value;
+  let score = document.getElementById("score").value;
+
+  if (currentEditIndex !== null) {
+    students[currentEditIndex] = { name, batch, age, score };
+    currentEditIndex = null;  
+  }
+
+  displayData(); 
+  document.getElementById("form").reset(); 
+}
+
+    displayData()
+
+  </script>
+
+</body>
+</html>

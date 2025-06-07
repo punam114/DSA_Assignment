@@ -1,0 +1,23 @@
+#container{
+    text-align: center;
+    /* border: 2px solid; */
+    font-family: sans-serif;
+    width: 250px;
+    padding: 30px;
+    border-radius: 12px;
+    margin: auto;
+    margin-top: 10%;
+    background-color: aliceblue;
+}
+input{
+    padding: 12px;
+    margin-bottom: 20px;
+}
+button{
+    padding: 8px 30px;
+    font-size: 18px;
+    background-color: rgb(50, 126, 203);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}

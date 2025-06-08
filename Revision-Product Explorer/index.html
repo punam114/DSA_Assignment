@@ -1,0 +1,45 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="nav">
+      <!-- search -->
+      <div>
+        <input type="text" id="searchInput" placeholder="Enter Product Name" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div>
+        <!-- filter -->
+        <select name="" id="filter">
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="electronics">Electronics</option>
+          <option value="women's clothing">Women's Clothing</option>
+        </select>
+
+        <!-- sort -->
+        <select name="" id="sort">
+          <option value="low">Low to High</option>
+          <option value="high">High to Low</option>
+          <option value="alphabetically">A - Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="box"></div>
+
+    <div id="pagination">
+      <button id="prev">Prev</button>
+      <span id="pageInfo">1 / 1</span>
+      <button id="next">Next</button>
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>

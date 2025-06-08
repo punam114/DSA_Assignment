@@ -1,0 +1,57 @@
+#nav{
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid; */
+    padding: 20px;
+    background-color: antiquewhite;
+
+}
+#nav button,input,select{
+    padding: 12px;
+    border: none;
+}
+#nav>div:nth-child(2){
+    margin-left: 10%;
+}
+#nav button{
+    background-color: rgb(196, 196, 244);
+    border-radius: 6px;
+    margin-left: 12px;
+    width: 100px;
+}
+#nav input{
+    width: 250px;
+}
+#nav select{
+    padding: 10px;
+}
+#box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 40px;
+}
+#box>div{
+    /* border: 1px solid; */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+img{
+    width: 100%;
+}
+#box>div>h2{
+    background-color: rgb(226, 243, 243);
+    padding: 8px;
+}
+#pagination{
+    display: flex;
+    justify-content: center;
+}
+#pagination>button{
+    margin-left: 20px;
+    background-color: rgb(196, 196, 244);
+    border-radius: 6px;
+    border: none;
+    padding: 12px;
+}

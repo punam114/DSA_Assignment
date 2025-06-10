@@ -1,0 +1,37 @@
+#nav{
+    background-color: rgb(215, 250, 242);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+#nav>input,button,select{
+    padding:8px;
+}
+#nav>input{
+    padding-right:60px;
+}
+#nav>button{
+    background-color: rgb(71, 192, 165);
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-right: 60px;
+    margin-left: 12px;
+}
+
+#box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    border: 2px solid;
+}
+#box>div{
+    margin: 40px;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 20px;
+}
+#box img{
+    width: 100%;
+}

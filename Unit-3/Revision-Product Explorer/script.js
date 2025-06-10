@@ -1,5 +1,4 @@
 /** @format */
-
 let url = "https://fakestoreapi.com/products";
 let ProductData = [];
 let currentPage = 1;

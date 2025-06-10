@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Character Directory</title>
+</head>
+<body>
+    <div id="nav">
+        <!-- search -->
+        <input type="text" id="searchInput" placeholder="Search Characters">
+        <button id="searchBtn">Search</button>
+
+        <!-- filter - status-->
+        <select name="" id="statusfilter">
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+            <option value=" Unknown"> Unknown</option>
+        </select>
+
+         <!-- filter - spices-->
+        <select name="" id="spicesfilter">
+            <option value="Human">Human</option>
+            <option value="Alien">Alien</option>
+            <option value="Robot">Robot</option>
+        </select>
+    </div>
+
+    <!-- display data -->
+    <div id="box"></div>
+
+    <!-- pagination -->
+    <div id="pagination">
+        <button>Previous</button>
+        <span id="pageInfo">1/1</span>
+        <button>Next</button>
+    </div>
+
+</body>
+</html>
+
+<script src="script.js"></script>

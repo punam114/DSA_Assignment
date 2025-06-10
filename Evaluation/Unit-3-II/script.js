@@ -1,6 +1,7 @@
 let url = "https://rickandmortyapi.com/api/character"
 
 let CharacterData = [];
+
 //fetch data
 async function fetchData(){
     let res = await fetch(url);
@@ -11,6 +12,7 @@ async function fetchData(){
 }
 
 function displayData(character){
+
     let box = document.getElementById("box");
     box.innerHTML = "";
 
@@ -66,7 +68,6 @@ spicesFilter.addEventListener("change",()=>{
  displayData(filteredSpices)
  console.log(filteredSpices)
 })
-
 
 
 

@@ -43,8 +43,8 @@ searchBtn.addEventListener("click",()=>{
 clearTimeout(timer);
 timer = setTimeout(()=> {
     displayData(filtered)
-    console.log("data fetched")
-},3000)
+    console.log("data fetched");
+},1000)
 })
 
 //filter status

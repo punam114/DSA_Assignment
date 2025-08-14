@@ -41,12 +41,19 @@
   color: #888;
 }
 
-nav{
+nav div{
   /* border: 2px solid; */
-  padding: 12px;
   display: flex;
-  justify-content: space-around;
-  background-color: rgb(223, 245, 255);
+  width: 100%;
+  justify-content: space-around;  align-items: center;
+}
+nav{
+   padding: 5px;
+  display: flex;
+  background-color: rgb(227, 255, 223);
+  border-top-left-radius:20px;
+  border-bottom-left-radius:20px;
+
 }
 .box1{
   display: grid;
@@ -62,13 +69,26 @@ nav{
 }
 .card{
   margin: auto;
-  border: 1px solid;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: 30%;
   text-align: center;
   margin-top: 20px;
 }
 button{
-  background-color: rgb(139, 204, 244);
+  background-color: rgb(162, 244, 139);
   margin-bottom: 20px;
   margin-left: 12px;
+}
+.poster{
+  width: 100%;
+  border: 2px solid;
+  height: 20vh;
+  margin-top: 20px;
+  background-color: rgb(38, 163, 10);
+  color: white;
+  text-align: center;
+}
+.logo1{
+  width:40px;
+  border-radius: 50%;
 }

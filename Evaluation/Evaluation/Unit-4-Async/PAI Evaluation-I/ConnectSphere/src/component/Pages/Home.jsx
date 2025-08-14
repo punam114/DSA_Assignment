@@ -23,6 +23,9 @@ export const Home = () => {
 
   return (
     <>
+    <div className='poster'>
+    <h1>ConnectSphere</h1>
+    </div>
        <div className='box1'>
         {users.map((user,i)=>(
          <div className='box2' key={i}>
@@ -32,7 +35,7 @@ export const Home = () => {
             <h4>Age : {user.age}</h4>
             <h4>BirthDate : {user.birthDate}</h4>
             <Link to={`/users/${user.id}`}><button>User Detail</button></Link>
-            <button>Follow</button>
+            <Link to='/follow'><button>Follow</button></Link>
          </div>
        ))} 
        </div>

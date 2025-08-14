@@ -32,6 +32,7 @@ export const UserDetail = () => {
             <h4>Bloodgroup : {detail.bloodGroup}</h4>
             <h4>Height : {detail.height}</h4>
             <h4>Weight : {detail.weight}</h4>
+            {/* <h4>Company : {detail.company.department}</h4> */}
     </div>
     </>
   )
